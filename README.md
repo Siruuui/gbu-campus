@@ -25,7 +25,20 @@ npm run build
 npm start
 ```
 
-Open http://127.0.0.1:5190/ for the day tour or http://127.0.0.1:5190/night/ for the night game. Run all commands from the repository root; the root build packages both modes together. Rebuild after changing source files. The completed build works without internet access. Fonts, geometry, materials and sound generation are local.
+Open http://127.0.0.1:5190/ for the day tour or http://127.0.0.1:5190/night/ for the night game. Run all commands from the repository root; the root build packages both modes together. The completed build works without internet access. Fonts, geometry, materials and sound generation are local.
+
+### See your source changes locally
+
+`npm run build` reads `tour/`, `night/` and `shared/`, then writes the day site to `dist/` and the night site to `dist/night/`. `npm start` loads that completed build into memory; it does not watch or rebuild source files. Open the local URLs above rather than double-clicking source HTML.
+
+After editing source files, stop the running server with **Ctrl+C**, then run these commands from the repository root:
+
+```sh
+npm run build
+npm start
+```
+
+Refresh the browser after the server starts. Rebuilding without restarting the running server still serves its previously loaded files; refreshing alone does not apply source edits.
 
 On Windows, after the first build you can also double-click **Start-GBU-Campus.cmd**. It uses the existing Codex Node runtime when available, otherwise Node from PATH, and opens the game.
 
